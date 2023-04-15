@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:ressources_relationnelles/screens/profil.dart';
 import 'package:ressources_relationnelles/screens/ressource.dart';
+import 'package:flutter/material.dart';
 
 class PrincipalMaster extends StatefulWidget {
   const PrincipalMaster({super.key});
@@ -20,12 +20,20 @@ class _PrincipalMasterState extends State<PrincipalMaster> {
     ];
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Ressources Relationnelles"),
-        backgroundColor: const Color.fromARGB(255, 92, 233, 255),
+        leadingWidth: 100,
+        title: Column(
+          children: <Widget>[
+            Image.asset("assets/logo.png", width: 100, height: 100),
+          ],
+        ),
+        backgroundColor: const Color.fromARGB(255, 3, 152, 158), //03989E
         //automaticallyImplyLeading: false,
       ),
       body: listeLiens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.shifting,
+        selectedItemColor: const Color.fromARGB(255, 3, 152, 158),
+        unselectedItemColor: Colors.grey,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.library_books),
